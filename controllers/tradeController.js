@@ -13,10 +13,11 @@ export const uploadTrades = (req, res) => {
     .pipe(csvParser())
     .on('data', (data) => results.push(data))
     .on('end', async () => {
-      fs.unlinkSync(file.path); 
+      fs.unlinkSync(file.path);
       try {
         await storeInDatabase(results);
-        res.send('File processed successfully.');
+        console.log('Parsed CSV Data:', results);
+        res.json(results); // Return the parsed data as JSON
       } catch (error) {
         console.error('Error storing data in database', error);
         res.status(500).send('Error storing data in database');
