@@ -1,4 +1,4 @@
-This Backend project wil use MVC pattern and below is the folder structure. 
+This Backend project will use MVC pattern and below is the folder structure. 
 
 crypto-trade-api/
 ├── controllers/
