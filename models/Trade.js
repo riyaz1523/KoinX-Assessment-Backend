@@ -1,5 +1,4 @@
-import mongoose from 'mongoose';
-
+import mongoose from "mongoose";
 
 const TradeSchema = new mongoose.Schema({
   utc_time: {
@@ -28,6 +27,6 @@ const TradeSchema = new mongoose.Schema({
   },
 });
 
-const Trade = mongoose.model('Trade', TradeSchema);
+const Trade = mongoose.model("Trade", TradeSchema);
 
 export default Trade;
