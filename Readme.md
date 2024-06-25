@@ -43,3 +43,31 @@ crypto-trade-api/
 - **Backend Deployment**
 - **Platform: Render**
 - **Details: Deployed the Node.js backend with MongoDB Atlas for database hosting.**
+
+### Setup
+- Prerequisites
+- Node.js
+- MongoDB
+
+### Installation
+- Clone the repository:
+```
+git clone https://github.com/yourusername/crypto-trade-api.git
+```
+- Navigate to the project directory:
+ ```
+cd crypto-trade-api
+```
+- Install the dependencies:
+```
+npm install
+```
+- Create a .env file in the root directory and add your MongoDB connection string:
+```
+MONGODB_URI=your_mongodb_connection_string
+```
+- Start the server:
+```
+npm start
+```
+
