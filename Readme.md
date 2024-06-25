@@ -1,5 +1,10 @@
-This Backend project will use MVC pattern and below is the folder structure. 
+# Crypto Trade API
 
+This project is a full-stack application that handles the upload of CSV files containing cryptocurrency trade data, stores this data in a MongoDB database, and provides an API to calculate asset balances at a given timestamp. The project is implemented using the MVC pattern in Node.js with Express and Mongoose.
+
+## Folder Structure
+
+```bash
 crypto-trade-api/
 ├── controllers/
 │   ├── balanceController.js
@@ -9,33 +14,32 @@ crypto-trade-api/
 ├── routes/
 │   ├── balanceRoute.js
 │   └── tradeRoutes.js
-├── uploads/ 
+├── uploads/
 ├── index.js
 ├── config.js
 ├── package.json
+```
 
-Backend Implementation
-CSV Upload API
+## Backend Implementation
 
-Endpoint: /api/trades/upload
-Functionality: Parses a CSV file of cryptocurrency trades and stores the data in MongoDB.
-Technologies: Node.js, Express, MongoDB, Mongoose.
-Details:
-Extracts trade details such as UTC_Time, Operation, Market, Buy/Sell Amount, and Price.
-Splits the Market field into base_coin and quote_coin.
-Validates and saves trades to the database.
-Asset Balance Calculation API
+### CSV Upload API
 
-Endpoint: /api/trades/calculateBalances
-Functionality: Calculates and returns the asset balances at a specified timestamp.
-Input: JSON with a timestamp.
-Output: JSON object with asset balances.
-Logic:
-Fetches trades before the provided timestamp.
-Computes balances by summing "buy" operations and subtracting "sell" operations.
+- **Endpoint**: `/api/trades/upload`
+- **Functionality**: Parses a CSV file of cryptocurrency trades and stores the data in MongoDB.
+- **Technologies**: Node.js, Express, MongoDB, Mongoose.
+- **Details**:
+  - Extracts trade details such as `UTC_Time`, `Operation`, `Market`, `Buy/Sell Amount`, and `Price`.
+  - Splits the `Market` field into `base_coin` and `quote_coin`.
+  - Validates and saves trades to the database.
 
-Deployment
-Backend Deployment
+### Asset Balance Calculation API
 
-Platform: Render
-Details: Deployed the Node.js backend with MongoDB Atlas for database hosting.
+- **Endpoint**: `/api/balance`
+- **Functionality**: Calculates and returns the asset balances at a specified timestamp.
+- **Input**: JSON with a timestamp.
+
+
+### Deployment
+- **Backend Deployment**
+- **Platform: Render**
+- **Details: Deployed the Node.js backend with MongoDB Atlas for database hosting.**
